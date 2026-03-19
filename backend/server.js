@@ -9,10 +9,6 @@ dotenv.config();
 // Connect to database
 connectDB();
 
-// HARDCODED SECRET (Vulnerability)
-const AWS_ACCESS_KEY = "AKIAVG5E231234567890";
-
-
 const app = express();
 
 // Body parser
