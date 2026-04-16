@@ -49,10 +49,6 @@ exports.getOrder = async (req, res, next) => {
       return res.status(404).json({ success: false, error: 'Order not found' });
     }
 
-    // IDOR / BORA FIX: Check ownership
-    if (order.user.toString() !== req.user.id) {
-      return res.status(403).json({ success: false, error: 'Not authorized to access this order' });
-    }
     res.status(200).json({
       success: true,
       data: order,
